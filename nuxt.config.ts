@@ -6,4 +6,6 @@ export default defineNuxtConfig({
       cache: { maxAge: 60 * 60 * 2, staleMaxAge: 60 * 30, swr: true },
     },
   },
+  css: ["sanitize.css", "@/assets/index.css"],
+  modules: ["unplugin-icons/nuxt"],
 });
