@@ -5,6 +5,30 @@ import "@fontsource/yantramanav/400.css";
 import "@fontsource/yantramanav/700.css";
 import ChevronRightIcon from "~icons/mdi/chevron-right";
 import ChevronLeftIcon from "~icons/mdi/chevron-left";
+import { useClamp } from "@vueuse/math";
+
+const { data: events } = await useFetch("/api/schedule");
+
+const fakeDate = new Date("2023-05-21");
+
+function getNextRound(events) {
+  const nextEvent = events.find((event) => {
+    console.log(event.date);
+    if (new Date(event.date) >= fakeDate) {
+      return event.round;
+    } else {
+      return false;
+    }
+  });
+
+  return nextEvent?.round;
+}
+
+const round = useState("round", () => getNextRound(events.value));
+
+const roundEvent = computed(() =>
+  events.value ? events.value[round.value - 1] : null
+);
 </script>
 
 <template>
@@ -15,7 +39,7 @@ import ChevronLeftIcon from "~icons/mdi/chevron-left";
       <div class="round-info">
         <div class="round-number">Round {{ round }} of 23</div>
         <h2 class="round-name">{{ roundEvent?.raceName }}</h2>
-        <input type="number" v-model="round" />
+        <input type="number" v-model="round" min="1" max="23" />
       </div>
     </header>
     <main>
