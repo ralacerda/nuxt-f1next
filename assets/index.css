@@ -1,3 +1,7 @@
+* {
+  user-select: none;
+}
+
 h1 {
   font-family: Montserrat;
   font-weight: 300;
@@ -88,10 +92,10 @@ main {
   color: grey;
 }
 
-[data-state="next"] {
-  color: green;
-}
-
 [data-state="future"] {
   color: white;
+}
+
+.relative {
+  text-transform: capitalize;
 }
