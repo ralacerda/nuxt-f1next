@@ -10,13 +10,12 @@ import { formatTimeAgo } from "@vueuse/core";
 
 const { data: events } = await useFetch("/api/schedule");
 
-const fakeDate = new Date("2023-05-21");
-const fakeTime = new Date("2023-05-20T08:32:24Z");
+const date = new Date(Date.now());
 
 function getNextRound(events: Schedule | null) {
   if (events) {
     const nextEvent = events.find((event) => {
-      if (new Date(event.date) >= fakeDate) {
+      if (new Date(event.date) >= date) {
         return event.round;
       } else {
         return false;
@@ -39,8 +38,8 @@ function parseSchedule(eventSchedule: { name: string; datetime: string }[]) {
     .sort((a, b) => a.datetime.getTime() - b.datetime.getTime())
     .map((event) => ({
       ...event,
-      relativeTime: formatTimeAgo(event.datetime, {}, fakeTime),
-      state: event.datetime > fakeTime ? "future" : "past",
+      relativeTime: formatTimeAgo(event.datetime, {}, date),
+      state: event.datetime > date ? "future" : "past",
       datetimeFormatted: useDateFormat(event.datetime, "DD MMM HH:mm"),
     }));
 }
