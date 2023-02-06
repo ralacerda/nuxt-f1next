@@ -40,8 +40,28 @@ h1 {
 }
 
 #__nuxt {
-  min-height: 100vh;
+  display: grid;
+  grid-template-areas: "stack";
   background-color: black;
+  height: 100vh;
+}
+
+#__nuxt > * {
+  grid-area: stack;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.1) saturate(0.8);
+}
+
+.content {
+  /* create a new stacking context 
+  to be on top of background image */
+  isolation: isolate;
+
   text-align: center;
   color: white;
   display: grid;
@@ -62,4 +82,16 @@ main {
   align-items: center;
   font-size: 24px;
   font-family: Yantramanav;
+}
+
+[data-state="past"] {
+  color: grey;
+}
+
+[data-state="next"] {
+  color: green;
+}
+
+[data-state="future"] {
+  color: white;
 }
