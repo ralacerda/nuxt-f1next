@@ -110,18 +110,19 @@ main {
 }
 
 [data-state="next"] .session-name::after {
-  display: block;
-  position: absolute;
-  right: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.6rem;
   top: 0;
+  left: 100%;
+  position: absolute;
   content: "next";
-  padding: 0.1rem 0.5rem;
   border: 1px green solid;
   border-radius: 4px;
   color: white;
   background-color: green;
   font-size: var(--step-0);
-  translate: 100% 0;
 }
 
 [data-state="next"] .session-name {
