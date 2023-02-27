@@ -1,5 +1,7 @@
-* {
-  user-select: none;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 h1 {
