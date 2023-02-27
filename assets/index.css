@@ -137,10 +137,15 @@ main {
   font-size: var(--step-2);
 }
 
-.chevron[data-state="disabled"] {
-  color: #303030;
+button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  height: 100%;
+  cursor: pointer;
 }
 
-.chevron:not([data-state="disabled"]) {
-  cursor: pointer;
+button[disabled] {
+  color: #303030;
+  cursor: default;
 }

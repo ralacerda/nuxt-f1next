@@ -92,11 +92,13 @@ function changeRound(value: number) {
       </div>
     </header>
     <main>
-      <ChevronLeftIcon
-        class="chevron"
+      <button
         @click="changeRound(-1)"
-        :data-state="round == 1 ? 'disabled' : ''"
-      />
+        aria-label="Previous Event"
+        :disabled="round == 1"
+      >
+        <ChevronLeftIcon class="chevron" />
+      </button>
       <div class="card">
         <div
           class="session-info"
@@ -111,11 +113,13 @@ function changeRound(value: number) {
           </div>
         </div>
       </div>
-      <ChevronRightIcon
-        class="chevron"
+      <button
         @click="changeRound(+1)"
-        :data-state="round == events?.length ? 'disabled' : ''"
-      />
+        aria-label="Next Event"
+        :disabled="round == events?.length"
+      >
+        <ChevronRightIcon class="chevron" />
+      </button>
     </main>
   </div>
 </template>
