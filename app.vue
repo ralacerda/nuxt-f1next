@@ -68,7 +68,19 @@ function changeRound(value: number) {
 </script>
 
 <template>
-  <img src="./assets/flag-1645262.jpg" />
+  <picture>
+    <img
+      sizes="(max-width: 1400px) 100vw, 1400px"
+      srcset="
+        ./assets/flag-1645262_jjw8xs_c_scale_w_200.webp   200w,
+        ./assets/flag-1645262_jjw8xs_c_scale_w_903.webp   903w,
+        ./assets/flag-1645262_jjw8xs_c_scale_w_1400.webp 1400w
+      "
+      src="./assets/flag-1645262_jjw8xs_c_scale_w_1400.webp"
+      alt=""
+    />
+  </picture>
+
   <div class="content" ref="swipeRegion">
     <header>
       <h1 class="app-title">F1Next</h1>
