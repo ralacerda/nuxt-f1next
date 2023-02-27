@@ -86,7 +86,7 @@ function changeRound(value: number) {
           <div class="session-name">{{ event.name }}</div>
           <div class="relative">{{ event.relativeTime }}</div>
           <div class="info-datetime">
-            {{ useDateFormat(event.datetime, "DD MMM HH:mm") }}
+            {{ useDateFormat(event.datetime, "DD MMM HH:mm").value }}
           </div>
         </div>
       </div>
