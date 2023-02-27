@@ -57,27 +57,16 @@ h1 {
 
 #__nuxt {
   display: grid;
-  grid-template-areas: "stack";
   background-color: black;
   min-height: 100vh;
-}
-
-#__nuxt > * {
-  grid-area: stack;
-}
-
-img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  filter: brightness(0.1) saturate(0.8);
+  background-image: url("./assets/flag-1645262_jjw8xs_c_scale_w_1400.webp");
+  background-size: cover;
+  background-position: center;
 }
 
 .content {
-  /* create a new stacking context 
-  to be on top of background image */
-  isolation: isolate;
-
+  backdrop-filter: blur(2px) brightness(10%) saturate(80%);
+  height: 100%;
   text-align: center;
   font-size: var(--step-0);
   color: white;
@@ -90,7 +79,6 @@ img {
 footer {
   font-size: var(--step-0);
   font-family: Montserrat;
-  font-weight: 300;
 }
 
 main {
