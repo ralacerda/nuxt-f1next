@@ -40,7 +40,6 @@ function parseSchedule(eventSchedule: { name: string; datetime: string }[]) {
       ...event,
       relativeTime: formatTimeAgo(event.datetime, {}, date),
       state: event.datetime > date ? "future" : "past",
-      datetimeFormatted: useDateFormat(event.datetime, "DD MMM HH:mm"),
     }));
 }
 
@@ -86,14 +85,12 @@ function changeRound(value: number) {
         >
           <div class="session-name">{{ event.name }}</div>
           <div class="relative">{{ event.relativeTime }}</div>
-          <div
-            class="info-datetime"
-            v-html="event.datetimeFormatted.value"
-          ></div>
+          <div class="info-datetime">
+            {{ useDateFormat(event.datetime, "DD MMM HH:mm") }}
+          </div>
         </div>
       </div>
       <ChevronRightIcon @click="changeRound(+1)" />
     </main>
-    <footer>Americas/São Paulo (GTM-03:00)</footer>
   </div>
 </template>
