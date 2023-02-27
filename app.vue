@@ -26,11 +26,11 @@ function getNextRound(events: Schedule | null) {
   }
   return 1;
 }
-
-const round = useState<number>("round", () => getNextRound(events.value));
+const nextRound = getNextRound(events.value);
+const round = useState<number>("round", () => nextRound);
 
 function parseSchedule(eventSchedule: { name: string; datetime: string }[]) {
-  return eventSchedule
+  const result = eventSchedule
     .map((event) => ({
       ...event,
       datetime: new Date(event.datetime),
@@ -41,6 +41,11 @@ function parseSchedule(eventSchedule: { name: string; datetime: string }[]) {
       relativeTime: formatTimeAgo(event.datetime, {}, date),
       state: event.datetime > date ? "future" : "past",
     }));
+  if (round.value == nextRound) {
+    const next = result.findIndex((event) => event.state == "future");
+    result[next].state = "next";
+  }
+  return result;
 }
 
 const roundEvent = computed(() => {
