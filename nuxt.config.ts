@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["sanitize.css", "@/assets/index.css"],
-  modules: ["unplugin-icons/nuxt", "@vueuse/nuxt"],
+  modules: ["unplugin-icons/nuxt", "@vueuse/nuxt", "@nuxtjs/robots"],
   app: {
     head: {
       htmlAttrs: {

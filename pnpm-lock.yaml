@@ -4,6 +4,7 @@ specifiers:
   '@fontsource/montserrat': ^4.5.14
   '@fontsource/yantramanav': ^4.5.9
   '@iconify-json/mdi': ^1.1.45
+  '@nuxtjs/robots': ^3.0.0
   '@types/node': ^18.11.18
   '@vueuse/core': ^9.12.0
   '@vueuse/math': ^9.12.0
@@ -16,6 +17,7 @@ specifiers:
 dependencies:
   '@fontsource/montserrat': 4.5.14
   '@fontsource/yantramanav': 4.5.9
+  '@nuxtjs/robots': 3.0.0
   '@vueuse/core': 9.12.0
   '@vueuse/math': 9.12.0
   '@vueuse/nuxt': 9.12.0_nuxt@3.1.1
@@ -969,6 +971,16 @@ packages:
       - vls
       - vti
       - vue-tsc
+
+  /@nuxtjs/robots/3.0.0:
+    resolution: {integrity: sha512-qsHGW1KXBvV5Kq7u3huPnFCUTbHS4Fk8Za2mNPgmUXcwLgp3exvhPtdZfIdjrCF/aZk3A8OZONNmGghs6CecBA==}
+    dependencies:
+      '@nuxt/kit': 3.1.1
+      h3: 1.1.0
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+    dev: false
 
   /@rollup/plugin-alias/4.0.3_rollup@3.12.1:
     resolution: {integrity: sha512-ZuDWE1q4PQDhvm/zc5Prun8sBpLJy41DMptYrS6MhAy9s9kL/doN1613BWfEchGVfKxzliJ3BjbOPizXX38DbQ==}
