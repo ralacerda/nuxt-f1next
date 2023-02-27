@@ -80,7 +80,11 @@ function changeRound(value: number) {
       </div>
     </header>
     <main>
-      <ChevronLeftIcon @click="changeRound(-1)" />
+      <ChevronLeftIcon
+        class="chevron"
+        @click="changeRound(-1)"
+        :data-state="round == 1 ? 'disabled' : ''"
+      />
       <div class="card">
         <div
           class="session-info"
@@ -95,7 +99,11 @@ function changeRound(value: number) {
           </div>
         </div>
       </div>
-      <ChevronRightIcon @click="changeRound(+1)" />
+      <ChevronRightIcon
+        class="chevron"
+        @click="changeRound(+1)"
+        :data-state="round == events?.length ? 'disabled' : ''"
+      />
     </main>
   </div>
 </template>

@@ -119,3 +119,11 @@ main {
 .relative {
   text-transform: capitalize;
 }
+
+.chevron[data-state="disabled"] {
+  color: #303030;
+}
+
+.chevron:not([data-state="disabled"]) {
+  cursor: pointer;
+}
