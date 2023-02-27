@@ -106,15 +106,14 @@ main {
   left: 100%;
   position: absolute;
   content: "next";
-  border: 1px green solid;
   border-radius: 4px;
-  color: white;
-  background-color: green;
+  color: black;
+  background-color: var(--green);
   font-size: var(--step-0);
 }
 
 [data-state="next"] .session-name {
-  color: green;
+  color: var(--green);
 }
 
 .relative {
