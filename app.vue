@@ -121,5 +121,8 @@ function changeRound(value: number) {
         <ChevronRightIcon class="chevron" />
       </button>
     </main>
+    <footer>
+      Timezone: {{ Intl.DateTimeFormat().resolvedOptions().timeZone }}
+    </footer>
   </div>
 </template>
