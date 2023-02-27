@@ -100,6 +100,22 @@ main {
   color: white;
 }
 
+[data-state="next"] .session-name::after {
+  position: absolute;
+  content: "next";
+  margin-left: 0.6rem;
+  padding: 0.1rem 0.2rem;
+  border: 1px green solid;
+  border-radius: 4px;
+  color: green;
+  /* 0.2rem from padding and an extra 1 px from border */
+  translate: 0 calc(-0.2rem - 1px);
+}
+
+[data-state="next"] .session-name {
+  color: green;
+}
+
 .relative {
   text-transform: capitalize;
 }
