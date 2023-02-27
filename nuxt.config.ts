@@ -8,4 +8,18 @@ export default defineNuxtConfig({
   },
   css: ["sanitize.css", "@/assets/index.css"],
   modules: ["unplugin-icons/nuxt", "@vueuse/nuxt"],
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+      title: "F1 Next",
+      meta: [
+        {
+          name: "description",
+          content: "A web app to show you schedules for Formula 1 races ",
+        },
+      ],
+    },
+  },
 });
