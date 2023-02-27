@@ -120,6 +120,10 @@ main {
   text-transform: capitalize;
 }
 
+.chevron {
+  height: 100%;
+}
+
 .chevron[data-state="disabled"] {
   color: #303030;
 }
