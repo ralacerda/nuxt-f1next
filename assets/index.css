@@ -59,9 +59,28 @@ h1 {
   display: grid;
   background-color: black;
   min-height: 100vh;
-  background-image: url("./assets/flag-1645262_jjw8xs_c_scale_w_1400.webp");
   background-size: cover;
   background-position: center;
+}
+
+/*  Image background always inside a media-query
+    to prevent uneeded downloads */
+@media (max-width: 360px) {
+  #__nuxt {
+    background-image: url("./assets/flag-1645262_jjw8xs_c_scale_w_200.webp");
+  }
+}
+
+@media (min-width: 361px) {
+  #__nuxt {
+    background-image: url("./assets/flag-1645262_jjw8xs_c_scale_w_903.webp");
+  }
+}
+
+@media (min-width: 900px) {
+  #__nuxt {
+    background-image: url("./assets/flag-1645262_jjw8xs_c_scale_w_1400.webp");
+  }
 }
 
 .content {
