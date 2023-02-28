@@ -1,42 +1,7 @@
-# Nuxt 3 Minimal Starter
+# F1 Next ![](./assets/icon.svg)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/30c4ac63-5660-40da-97e2-6116e2a18174/deploy-status)](https://app.netlify.com/sites/f1next/deploys)
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+A web app to show Formula 1 Races schedule. It includes local time and a countdown for each event.
+It was was created using [Nuxt](https://nuxt.com/) and [Netlify Serverless Functions](https://www.netlify.com/products/functions/).  
+Data is provided by the [Ergast Developer API](https://ergast.com/mrd/).
