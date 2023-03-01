@@ -30,7 +30,10 @@ export default defineNuxtConfig({
           content:
             "F1 Next is a web app that displays Formula 1 race schedules, adapts to the user's local time zone, and uses serverless functions to maintain updated data. Created to help fans stay informed",
         },
-        { name: "og:image", content: "https://f1next.netlify.app/preview.png" },
+        {
+          name: "og:image",
+          content: "https://f1next.netlify.app/preview.webp",
+        },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:url", content: "https://f1next.netlify.app/" },
         { name: "twitter:title", content: "F1 Next" },
@@ -41,7 +44,7 @@ export default defineNuxtConfig({
         },
         {
           name: "twitter:image",
-          content: "https://f1next.netlify.app/preview.png",
+          content: "https://f1next.netlify.app/preview.webp",
         },
       ],
     },
