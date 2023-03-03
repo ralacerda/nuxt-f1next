@@ -38,7 +38,7 @@ function parseSchedule(eventSchedule: { name: string; datetime: string }[]) {
     .sort((a, b) => a.datetime.getTime() - b.datetime.getTime())
     .map((event) => ({
       ...event,
-      relativeTime: formatTimeAgo(event.datetime, {}, date),
+      relativeTime: formatTimeAgo(event.datetime, { rounding: "floor" }, date),
       state: event.datetime > date ? "future" : "past",
     }));
   if (round.value == nextRound) {
