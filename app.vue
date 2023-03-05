@@ -13,9 +13,12 @@ const { data: events } = await useFetch("/api/schedule");
 const date = new Date(Date.now());
 
 function getNextRound(events: Schedule | null) {
+  const today = new Date(
+    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+  );
   if (events) {
     const nextEvent = events.find((event) => {
-      if (new Date(event.date) >= date) {
+      if (new Date(event.date) >= today) {
         return event.round;
       } else {
         return false;
