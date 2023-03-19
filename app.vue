@@ -11,24 +11,8 @@ import { formatTimeAgo } from "@vueuse/core";
 const { data: events } = await useFetch("/api/schedule");
 
 const date = new Date(Date.now());
+const today = new Date("2023-03-19");
 
-function getNextRound(events: Schedule | null) {
-  const today = new Date(
-    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
-  );
-  if (events) {
-    const nextEvent = events.find((event) => {
-      if (new Date(event.date) >= today) {
-        return event.round;
-      } else {
-        return false;
-      }
-    });
-
-    return nextEvent ? parseInt(nextEvent.round) : 1;
-  }
-  return 1;
-}
 const nextRound = getNextRound(events.value);
 const round = useState<number>("round", () => nextRound);
 
