@@ -5,35 +5,11 @@ import "@fontsource/yantramanav/400.css";
 import "@fontsource/yantramanav/700.css";
 import ChevronRightIcon from "~icons/mdi/chevron-right";
 import ChevronLeftIcon from "~icons/mdi/chevron-left";
-import type { Schedule } from "~~/types";
-import { formatTimeAgo } from "@vueuse/core";
 
 const { data: events } = await useFetch("/api/schedule");
 
-const date = new Date(Date.now());
-const today = new Date("2023-03-19");
-
 const nextRound = getNextRound(events.value);
 const round = useState<number>("round", () => nextRound);
-
-function parseSchedule(eventSchedule: { name: string; datetime: string }[]) {
-  const result = eventSchedule
-    .map((event) => ({
-      ...event,
-      datetime: new Date(event.datetime),
-    }))
-    .sort((a, b) => a.datetime.getTime() - b.datetime.getTime())
-    .map((event) => ({
-      ...event,
-      relativeTime: formatTimeAgo(event.datetime, { rounding: "floor" }, date),
-      state: event.datetime > date ? "future" : "past",
-    }));
-  if (round.value == nextRound) {
-    const next = result.findIndex((event) => event.state == "future");
-    result[next].state = "next";
-  }
-  return result;
-}
 
 const roundEvent = computed(() => {
   if (events.value && round.value) {
@@ -41,7 +17,7 @@ const roundEvent = computed(() => {
     return {
       round: event.round,
       raceName: event.raceName,
-      schedule: parseSchedule(event.schedule),
+      schedule: getParsedSchedule(event.schedule, round.value, nextRound),
     };
   }
 });
