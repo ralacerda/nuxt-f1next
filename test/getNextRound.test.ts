@@ -5,7 +5,6 @@ import type { Schedule } from "types";
 describe("Get the current round correctly", () => {
   test("Get the round if the race is in the same day", () => {
     vi.setSystemTime(new Date("2023-03-19T20:00:00Z"));
-    const nextRound = getNextRound(testSchedule);
     expect(getNextRound(testSchedule)).toBe(2);
   });
 
