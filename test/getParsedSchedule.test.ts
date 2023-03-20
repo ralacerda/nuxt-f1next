@@ -3,8 +3,13 @@ import getParsedSchedule from "composables/getParsedSchedule";
 
 describe("Parse the schedule", () => {
   vi.setSystemTime("2023-03-04T14:26:21.000Z");
-  test("Get the round if the race is in the same day", () => {
+  test("Indicate the next event when the current round is the next round", () => {
     const result = getParsedSchedule(schedule.schedule, 1, 1);
+    expect(result).toMatchSnapshot();
+  });
+
+  test("Do not indicate the next event when the current round is the next round", () => {
+    const result = getParsedSchedule(schedule.schedule, 1, 2);
     expect(result).toMatchSnapshot();
   });
 });

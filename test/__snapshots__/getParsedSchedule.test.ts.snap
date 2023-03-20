@@ -1,6 +1,41 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Parse the schedule > Get the round if the race is in the same day 1`] = `
+exports[`Parse the schedule > Do not indicate the next event when the current round is the next round 1`] = `
+[
+  {
+    "datetime": 2023-03-03T11:30:00.000Z,
+    "name": "First Practice",
+    "relativeTime": "yesterday",
+    "state": "past",
+  },
+  {
+    "datetime": 2023-03-03T15:00:00.000Z,
+    "name": "Second Practice",
+    "relativeTime": "23 hours ago",
+    "state": "past",
+  },
+  {
+    "datetime": 2023-03-04T11:30:00.000Z,
+    "name": "Third Practice",
+    "relativeTime": "2 hours ago",
+    "state": "past",
+  },
+  {
+    "datetime": 2023-03-04T15:00:00.000Z,
+    "name": "Qualifying",
+    "relativeTime": "in 33 minutes",
+    "state": "future",
+  },
+  {
+    "datetime": 2023-03-05T15:00:00.000Z,
+    "name": "Race",
+    "relativeTime": "tomorrow",
+    "state": "future",
+  },
+]
+`;
+
+exports[`Parse the schedule > Indicate the next event when the current round is the next round 1`] = `
 [
   {
     "datetime": 2023-03-03T11:30:00.000Z,
