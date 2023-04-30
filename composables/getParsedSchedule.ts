@@ -19,7 +19,9 @@ export default function (
     }));
   if (round == nextRound) {
     const next = result.findIndex((event) => event.state == "future");
-    result[next].state = "next";
+    if (next >= 0) {
+      result[next].state = "next";
+    }
   }
   return result;
 }
